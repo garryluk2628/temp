@@ -2,10 +2,7 @@ import yfinance as yf
 import streamlit as st
 import pandas as pd
 import datetime
-tickerSymbol = 'AAPL'
-tickerData = yf.Ticker(tickerSymbol)
-tickerDf = tickerData.history(start=sd, end=ed)
-tickerDf['simple_rtn'] = tickerDf.Close.pct_change()
+
 st.write("""
 # Simple Stock Price App
 Shown the stock closing price, volume and simple return of the selected Stock!
@@ -19,28 +16,22 @@ ed = st.date_input(
      datetime.date(2022, 7, 1))
 
 
-tickerSymbol = st.selectbox('Select the Stock that you like to plot graph', ('AAPL','TSLA','GOOG','MSFT','1211.HK','0011.HK'))
-stock_close = ("Stock Close Price")
-stock_volume = ("Stock Daily Volume")
-stock_return = ("Stock Simple Return") 
+tickerSymbol = st.selectbox('Select the Stock that you like to plot graph', ('AAPL','TSLA','GOOG','MSFT','1211.HK','0011.HK'))		    
 			    
-			    
-#tickerSymbol = 'GOOGL'
+
 #get data on this ticker
-#tickerData = yf.Ticker(tickerSymbol)
+tickerData = yf.Ticker(tickerSymbol)
 #get the historical prices for this ticker			    
 #define the ticker symbol
 #tickerSymbol = option 
-#get data on this ticker
-#tickerData = yf.Ticker(tickerSymbol)
 #get the historical prices for this ticker
-#tickerDf = tData.history(start=sd, end=ed)
+tickerDf = tickerData.history(start=sd, end=ed)
 # Open	High	Low	Close	Volume	Dividends	Stock Splits
-#tickerDf['simple_rtn'] = tickerDf.Close.pct_change()
+tickerDf['simple_rtn'] = tickerDf.Close.pct_change()
 
-#stock_close = ("Stock Close Price")
-#stock_volume = ("Stock Daily Volume")
-#stock_return = ("Stock Simple Return")
+stock_close = ("Stock Close Price")
+stock_volume = ("Stock Daily Volume")
+stock_return = ("Stock Simple Return")
 
 if option == 'AAPL':
 	stock_name = 'APPLE Company'
