@@ -1,1 +1,1 @@
-pip install yfinance
+yfinance==0.1.74
