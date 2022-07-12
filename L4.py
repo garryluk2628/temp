@@ -21,6 +21,11 @@ ed = st.date_input(
 
 tickerSymbol = st.selectbox('Select the Stock that you like to plot graph', ('AAPL','TSLA','GOOG','MSFT','1211.HK','0011.HK')
 
+stock_close = ("Stock Close Price")
+stock_volume = ("Stock Daily Volume")
+stock_return = ("Stock Simple Return") 
+			    
+			    
 #tickerSymbol = 'GOOGL'
 #get data on this ticker
 #tickerData = yf.Ticker(tickerSymbol)
@@ -34,9 +39,9 @@ tickerSymbol = st.selectbox('Select the Stock that you like to plot graph', ('AA
 # Open	High	Low	Close	Volume	Dividends	Stock Splits
 #tickerDf['simple_rtn'] = tickerDf.Close.pct_change()
 
-stock_close = ("Stock Close Price")
-stock_volume = ("Stock Daily Volume")
-stock_return = ("Stock Simple Return")
+#stock_close = ("Stock Close Price")
+#stock_volume = ("Stock Daily Volume")
+#stock_return = ("Stock Simple Return")
 
 if option == 'AAPL':
 	stock_name = 'APPLE Company'
