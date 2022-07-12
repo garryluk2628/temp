@@ -5,6 +5,7 @@ import datetime
 tickerSymbol = 'AAPL'
 tickerData = yf.Ticker(tickerSymbol)
 tickerDf = tData.history(start=sd, end=ed)
+tickerDf['simple_rtn'] = tickerDf.Close.pct_change()
 st.write("""
 # Simple Stock Price App
 Shown the stock closing price, volume and simple return of the selected Stock!
