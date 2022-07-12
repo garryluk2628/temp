@@ -32,7 +32,7 @@ tickerSymbol = st.selectbox('Select the Stock that you like to plot graph', ('AA
 #get the historical prices for this ticker
 #tickerDf = tData.history(start=sd, end=ed)
 # Open	High	Low	Close	Volume	Dividends	Stock Splits
-tickerDf['simple_rtn'] = tickerDf.Close.pct_change()
+#tickerDf['simple_rtn'] = tickerDf.Close.pct_change()
 
 stock_close = ("Stock Close Price")
 stock_volume = ("Stock Daily Volume")
