@@ -4,7 +4,7 @@ import pandas as pd
 import datetime
 tickerSymbol = 'AAPL'
 tickerData = yf.Ticker(tickerSymbol)
-tickerDf = tData.history(start=sd, end=ed)
+tickerDf = tickerData.history(start=sd, end=ed)
 tickerDf['simple_rtn'] = tickerDf.Close.pct_change()
 st.write("""
 # Simple Stock Price App
