@@ -15,12 +15,12 @@ ed = st.date_input(
      "Start date",
      datetime.date(2022, 7, 1))
 
-option = 'AAPL'
-option = st.selectbox('Select the Stock that you like to plot graph', ('AAPL','TSLA','GOOG','MSFT','1211.HK','0011.HK')
+tickerSymbol = 'AAPL'
+tickerSymbol = st.selectbox('Select the Stock that you like to plot graph', ('AAPL','TSLA','GOOG','MSFT','1211.HK','0011.HK')
 
 
 #define the ticker symbol
-tickerSymbol = option
+#tickerSymbol = option 
 #get data on this ticker
 tickerData = yf.Ticker(tickerSymbol)
 #get the historical prices for this ticker
