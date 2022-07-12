@@ -17,10 +17,15 @@ ed = st.date_input(
 
 tickerSymbol = 'AAPL'
 tickerSymbol = st.selectbox('Select the Stock that you like to plot graph', ('AAPL','TSLA','GOOG','MSFT','1211.HK','0011.HK')
+
+#tickerSymbol = 'GOOGL'
+#get data on this ticker
+tickerData = yf.Ticker(tickerSymbol)
+#get the historical prices for this ticker			    
 #define the ticker symbol
 #tickerSymbol = option 
 #get data on this ticker
-tickerData = yf.Ticker(tickerSymbol)
+#tickerData = yf.Ticker(tickerSymbol)
 #get the historical prices for this ticker
 tickerDf = tickerData.history(start=sd, end=ed)
 # Open	High	Low	Close	Volume	Dividends	Stock Splits
