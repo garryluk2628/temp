@@ -12,7 +12,7 @@ sd = st.date_input(
      datetime.date(2019, 1, 1))
 
 ed = st.date_input(
-     "Start date",
+     "End date",
      datetime.date(2022, 7, 1))
 
 
