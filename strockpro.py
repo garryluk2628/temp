@@ -11,7 +11,7 @@ from pypfopt.discrete_allocation import DiscreteAllocation, get_latest_prices
 plt.style.use('fivethirtyeight')
 
 options = st.multiselect(
-     'What are your favorite Stocks',
+     'What are your favorite colors',
      ['FB', 'AAPL', 'AMZN', 'NFLX','GOOG','TSLA','0011.HK','1211.HK'],
      ['AAPL','TSLA'])
 
@@ -84,7 +84,7 @@ mu = expected_returns.mean_historical_return(my_stock)
 
 S = risk_models.sample_cov(my_stock)
 
-ef = EfficientFrontier(mu,S)
+ef = EfficientFrontier(mu,S, weight_bounds=(None,None))
 weights = ef.max_sharpe()
 cleaned_weights = ef.clean_weights()
 
@@ -106,7 +106,6 @@ if invamount > 1:
 	latest_prices = get_latest_prices(df)
 	weights = cleaned_weights
 	da = DiscreteAllocation(weights, latest_prices, total_portfolio_value = invamount)
-	st.write(da.lp_portfolio())
-	#allocation,leftover = da.lp_portfolio()
-	#st.write('Discrete allocation: ',allocation)
-	#st.write('Funds remaining: $',round(leftover,2))
+	allocation,leftover = da.lp_portfolio()
+	st.write('Discrete allocation: ',allocation)
+	st.write('Funds remaining: $',round(leftover,2))
