@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from pypfopt.efficient_frontier import EfficientFrontier
 from pypfopt import risk_models
 from pypfopt import expected_returns
-from pypfopt.discrete_allocation import DiscreteAllocation, get_latest_prices
+from pypfopt.discrete_allocation import DiscreteAllocation, get_latest_prices, greedy_portfolio
 plt.style.use('fivethirtyeight')
 
 options = st.multiselect(
@@ -105,7 +105,8 @@ st.write('The Investment amount is ', invamount)
 if invamount > 1:
 	latest_prices = get_latest_prices(df)
 	weights = cleaned_weights
-	da = DiscreteAllocation(weights, latest_prices, total_portfolio_value = invamount)
+	da = greedy_portfolio(weights, latest_prices, total_portfolio_value = invamount)
+	#da = DiscreteAllocation(weights, latest_prices, total_portfolio_value = invamount)
 	allocation,leftover = da.lp_portfolio()
 	st.write('Discrete allocation: ',allocation)
 	st.write('Funds remaining: $',round(leftover,2))
