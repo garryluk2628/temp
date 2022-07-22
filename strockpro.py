@@ -105,7 +105,7 @@ st.write('The Investment amount is ', invamount)
 if invamount > 1:
 	latest_prices = get_latest_prices(df)
 	weights = cleaned_weights
-	da = greedy_portfolio(weights, latest_prices, total_portfolio_value = invamount)
+	da = DiscreteAllocation.greedy_portfolio(weights, latest_prices, total_portfolio_value = invamount)
 	#da = DiscreteAllocation(weights, latest_prices, total_portfolio_value = invamount)
 	allocation,leftover = da.lp_portfolio()
 	st.write('Discrete allocation: ',allocation)
