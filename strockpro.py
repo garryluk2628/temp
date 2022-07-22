@@ -107,6 +107,6 @@ if invamount > 1:
 	weights = cleaned_weights
 	da = DiscreteAllocation(weights, latest_prices, total_portfolio_value = invamount)
 	st.write(da.lp_portfolio())
-	allocation,leftover = da.lp_portfolio()
-	st.write('Discrete allocation: ',allocation)
-	st.write('Funds remaining: $',round(leftover,2))
+	#allocation,leftover = da.lp_portfolio()
+	#st.write('Discrete allocation: ',allocation)
+	#st.write('Funds remaining: $',round(leftover,2))
