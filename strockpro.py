@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from pypfopt.efficient_frontier import EfficientFrontier
 from pypfopt import risk_models
 from pypfopt import expected_returns
-from pypfopt.discrete_allocation import DiscreteAllocation, get_latest_prices, greedy_portfolio
+from pypfopt.discrete_allocation import DiscreteAllocation, get_latest_prices
 plt.style.use('fivethirtyeight')
 
 options = st.multiselect(
