@@ -11,7 +11,7 @@ from pypfopt.discrete_allocation import DiscreteAllocation, get_latest_prices
 plt.style.use('fivethirtyeight')
 
 options = st.multiselect(
-     'What are your favorite colors',
+     'What are your favorite Stocks',
      ['FB', 'AAPL', 'AMZN', 'NFLX','GOOG','TSLA','0011.HK','1211.HK'],
      ['AAPL','TSLA'])
 
