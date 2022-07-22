@@ -62,12 +62,19 @@ st.line_chart(my_stock)
 
 #plt.title(title)
 returns = df.pct_change()
+
 cov_matrix_annual = returns.cov() * 252
 st.write(cov_matrix_annual)
 
-corr_df = cov_matrix_annual.round(2) # round to 2 decimal places
-fig_corr = px.imshow(corr_df, text_auto=True, title = 'Correlation between Stocks')
-fig_corr.show()
+fig, ax = plt.subplots()
+sns.heatmap(cov_matrix_annual.corr(), ax=ax, annot=True, fmt=".2f", cmap='Blues',
+           vmin=-1, vmax=1, cbar_kws={"shrink": .8})
+st.write(fig)
+
+
+#corr_df = cov_matrix_annual.round(2) # round to 2 decimal places
+#fig_corr = px.imshow(corr_df, text_auto=True, title = 'Correlation between Stocks')
+#fig_corr.show()
 
 
 mu = expected_returns.mean_historical_return(df)
@@ -112,5 +119,3 @@ expected_annual_return, annual_volatility, sharpe_ratio = ef.portfolio_performan
 st.write('Expected annual return: {}%'.format((expected_annual_return*100).round(2)))
 st.write('Annual volatility: {}%'.format((annual_volatility*100).round(2)))
 st.write('Sharpe ratio: {}'.format(sharpe_ratio.round(2)))
-
-
