@@ -11,10 +11,10 @@ from finquant.portfolio import build_portfolio
 from finquant.efficient_frontier import EfficientFrontier
 from finquant.moving_average import compute_ma, ema
 
-st.set_page_config(
-page_title="Portfolio Optimization Tools",
-page_icon="📈",
-layout="wide")
+#st.set_page_config(
+#page_title="Portfolio Optimization Tools",
+#page_icon="📈",
+#layout="wide")
 
 st.title("Portfolio Optimization Tools")
 st.caption("Here is the tools for you, the investor, to build and optimize your own equity portfolio with Hang Seng Index (HSI).")
