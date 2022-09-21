@@ -4,3 +4,4 @@ pyportfolioopt==1.5.2
 plotly==5.6.0
 plotly-express
 finquant
+matplotlib
